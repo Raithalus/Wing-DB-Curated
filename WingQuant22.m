@@ -1,55 +1,59 @@
 %% Clear
-% clear all; close all; format longg; format compact; clc;
+clear all; close all; format longg; format compact; clc;
 %% 
-run CoordArrayCurated.m
+run CoordArrayCurated2.m
 %%
-WingIDS = imageDatastore('C:\Users\che7oz\Desktop\Wing DB Curated','FileExtensions','.tif', 'LabelSource', 'foldernames','IncludeSubfolders', 1);
+WingIDS = imageDatastore('C:\Users\David Cheung\Documents\GitHub\Wing-DB-Curated','FileExtensions','.tif', 'LabelSource', 'foldernames','IncludeSubfolders', 1);
 %% Label Count
 WingLabel = countEachLabel(WingIDS);
-A = 1:WingLabel.Count(1);
-B = max(A)+1:WingLabel.Count(2)+max(A);
-C = max(B)+1:WingLabel.Count(3)+max(B);
-D = max(C)+1:WingLabel.Count(4)+max(C);
-E = max(D)+1:WingLabel.Count(5)+max(D);
-F = max(E)+1:WingLabel.Count(6)+max(E);
-G = max(F)+1:WingLabel.Count(7)+max(F);
-H = max(G)+1:WingLabel.Count(8)+max(G);
-I = max(H)+1:WingLabel.Count(9)+max(H);
-J = max(I)+1:WingLabel.Count(10)+max(I);
-K = max(J)+1:WingLabel.Count(11)+max(J);
-L = max(K)+1:WingLabel.Count(12)+max(K);
-M = max(L)+1:WingLabel.Count(13)+max(L);
-N = max(M)+1:WingLabel.Count(14)+max(M);
-O = max(N)+1:WingLabel.Count(15)+max(N);
-P = max(O)+1:WingLabel.Count(16)+max(O);
-Q = max(P)+1:WingLabel.Count(17)+max(P);
-R = max(Q)+1:WingLabel.Count(18)+max(Q);
-S = max(R)+1:WingLabel.Count(19)+max(R);
-T = max(S)+1:WingLabel.Count(20)+max(S);
-U = max(T)+1:WingLabel.Count(21)+max(T);
-V = max(U)+1:WingLabel.Count(22)+max(U);
-W = max(V)+1:WingLabel.Count(23)+max(V);
-X = max(W)+1:WingLabel.Count(24)+max(W);
-Y = max(X)+1:WingLabel.Count(25)+max(X);
-Z = max(Y)+1:WingLabel.Count(26)+max(Y);
-AA = max(Z)+1:WingLabel.Count(27)+max(Z);
-AB = max(AA)+1:WingLabel.Count(28)+max(AA);
-AC = max(AB)+1:WingLabel.Count(29)+max(AB);
-AD = max(AC)+1:WingLabel.Count(30)+max(AC);
-AE = max(AD)+1:WingLabel.Count(31)+max(AD);
-AF = max(AE)+1:WingLabel.Count(32)+max(AE);
-AG = max(AF)+1:WingLabel.Count(33)+max(AF);
-AH = max(AG)+1:WingLabel.Count(34)+max(AG);
-AI = max(AH)+1:WingLabel.Count(35)+max(AH);
-
+A = 1:WingLabel.Count(1); %12xSPS-GBE-lacZ 2 copies
+B = max(A)+1:WingLabel.Count(2)+max(A); %12xSPS-GBE-lacZ 2 copies_ Del_het Ser_het
+C = max(B)+1:WingLabel.Count(3)+max(B); %12xSPS-GBE-lacZ 2 copies_ H_het
+D = max(C)+1:WingLabel.Count(4)+max(C); %4x12xCSL-GBE-lacZxDl[9P]
+E = max(D)+1:WingLabel.Count(5)+max(D); %4x12xCSL-GBE-lacZxDl[revF10]Ser[RX82]
+F = max(E)+1:WingLabel.Count(6)+max(E); %4x12xCSL-GBE-lacZxH[1]
+G = max(F)+1:WingLabel.Count(7)+max(F); %4x12xCSL-GBE-lacZxYW
+H = max(G)+1:WingLabel.Count(8)+max(G); %Del_het Ser_het
+I = max(H)+1:WingLabel.Count(9)+max(H); %Dl[9P] x yw
+J = max(I)+1:WingLabel.Count(10)+max(I); %GBE-48xSPS-lacZ 2 copies
+K = max(J)+1:WingLabel.Count(11)+max(J); %H1_Ago1
+L = max(K)+1:WingLabel.Count(12)+max(K); %H1_Cdk8
+M = max(L)+1:WingLabel.Count(13)+max(L); %H1_CycC
+N = max(M)+1:WingLabel.Count(14)+max(M); %H1_Med12
+O = max(N)+1:WingLabel.Count(15)+max(N); %H1_Med13
+P = max(O)+1:WingLabel.Count(16)+max(O); %H1_YW
+Q = max(P)+1:WingLabel.Count(17)+max(P); %H_het
+R = max(Q)+1:WingLabel.Count(18)+max(Q); %N1 x yw (FG)
+S = max(R)+1:WingLabel.Count(19)+max(R); %N55e11 x yw (FG)
+T = max(S)+1:WingLabel.Count(20)+max(S); %N55e11 x yw (YK)
+U = max(T)+1:WingLabel.Count(21)+max(T); %N[55e11] x GBE-12xSPS-lacZ
+V = max(U)+1:WingLabel.Count(22)+max(U); %N[55e11]+_cdk8[K185]+_female_rightwing
+W = max(V)+1:WingLabel.Count(23)+max(V); %N[55e11]Xago[1]
+X = max(W)+1:WingLabel.Count(24)+max(W); %N[55e11]Xcdk8[K185]
+Y = max(X)+1:WingLabel.Count(25)+max(X); %N[55e11]XcycC[Y5]
+Z = max(Y)+1:WingLabel.Count(26)+max(Y); %N[55e11]Xkto[T241]
+AA = max(Z)+1:WingLabel.Count(27)+max(Z); %N[55e11]Xskd[T613]
+AB = max(AA)+1:WingLabel.Count(28)+max(AA); %N[55e11]xDl[9P]
+AC = max(AB)+1:WingLabel.Count(29)+max(AB); %N[55e11]xDl[revF10]Ser[RX82]
+AD = max(AC)+1:WingLabel.Count(30)+max(AC); %N[55e11]xH[1]
+AE = max(AD)+1:WingLabel.Count(31)+max(AD); %N[55e11]xSu(H)[IB115]
+AF = max(AE)+1:WingLabel.Count(32)+max(AE); %cdk8 x yw
+AG = max(AF)+1:WingLabel.Count(33)+max(AF); %cycC x yw
+AH = max(AG)+1:WingLabel.Count(34)+max(AG); %kto x yw
+AI = max(AH)+1:WingLabel.Count(35)+max(AH); %yw
 
 
 %%
-AlphaNum = {char('A'); 'B'; 'C'; 'D'; 'E'; 'F'; 'G'; 'H'; 'I'; 'J'; 'K'; 'L'; 'M'; 'N'; 'O'; 'P'; 'Q'; 'R'; 'S'; 'T'; 'U'; 'V'; 'W'; 'X'; 'Y'; 'Z'; 'AA'; 'AB'; 'AC'; 'AD'; 'AE'; 'AF'; 'AG'; 'AH'; 'AI'};
-AlphaTest = table(AlphaNum)
+AlphaNum = {'A'; 'B'; 'C'; 'D'; 'E'; 'F'; 'G'; 'H'; 'I'; 'J'; 'K'; 'L'; 'M'; 'N'; 'O'; 'P'; 'Q'; 'R'; 'S'; 'T'; 'U'; 'V'; 'W'; 'X'; 'Y'; 'Z'; 'AA'; 'AB'; 'AC'; 'AD'; 'AE'; 'AF'; 'AG'; 'AH'; 'AI'};
+AlphaTest = table(AlphaNum);
+AlphaNum2 = {A; B; C; D; E; F; G; H; I; J; K; L; M; N; O; P; Q; R; S; T; U; V; W; X; Y; Z; AA; AB; AC; AD; AE; AF; AG; AH; AI;};
+
+AlphaSort = [table(AlphaNum), table(AlphaNum2), WingLabel];
+
+
 %%
-table
-WingLabel.AlphaNum = 1
+% table
+% WingLabel.AlphaNum = 1
 
 
 
@@ -57,15 +61,15 @@ WingLabel.AlphaNum = 1
 
 %% Read Images
 
-for i = G %1:length(WingIDS.Files) %1:length(WingIDS.Files)
+for i =  R %1:length(WingIDS.Files) %1:length(WingIDS.Files)
 		[test, fileinfo]= readimage(WingIDS,i);
 		[filepath,name,ext] = fileparts(fileinfo.Filename);
 		name = [name, ext];
 		img(:,:,i) = rgb2gray(readimage(WingIDS,i));	
  	img1 = imgaussfilt(img(:,:,i), 4);
   img2 = imcomplement(img1);
-  T = adaptthresh(img2,0.51,'ForegroundPolarity','Bright','NeighborhoodSize', 65, 'Statistic', 'Mean');
-bw = imbinarize(img2, T);
+  Ta = adaptthresh(img2,0.51,'ForegroundPolarity','Bright','NeighborhoodSize', 65, 'Statistic', 'Mean');
+bw = imbinarize(img2, Ta);
 % 		bw = imbinarize(img2, 'Adaptive', 'ForegroundPolarity', 'Bright', 'Sensitivity', 0.5);
 		bw1 = bwareaopen(bw, 1000);
 		bw2 = bwmorph(bw1, 'fill');
@@ -156,28 +160,69 @@ bwCA = [stats.ConvexArea];
 bwCA3 = bwCA4(1);
 bwCA5 = stats(bwCA3).ConvexImage;
 %% Skeletal Overlay
-figure, 
+% figure, 
 % imshow(WingI1); title(name, 'Interpreter', 'none');
-imshow(bwCA5); title(name, 'Interpreter', 'none');
-I = bw7;
-J = bw8;
-K = bw9;
-red = cat(3, ones(size(WingI1)), zeros(size(WingI1)), zeros(size(WingI1))); 
-green = cat(3, zeros(size(WingI1)), ones(size(WingI1)), zeros(size(WingI1)));
-blue = cat(3, zeros(size(WingI1)), zeros(size(WingI1)), ones(size(WingI1)));
-hold on ;
-h = imshow(red); 
-set(h, 'AlphaData', I);
-j = imshow(green); 
-set(j, 'AlphaData', J);
-k = imshow(blue);
-set(k, 'AlphaData', K);
-hold off;
+% % imshow(bwCA5); title(name, 'Interpreter', 'none');
+% Ia = bw7a;
+% Ja = bw8;
+% Ka = bw9;
+% red = cat(3, ones(size(WingI1)), zeros(size(WingI1)), zeros(size(WingI1))); 
+% green = cat(3, zeros(size(WingI1)), ones(size(WingI1)), zeros(size(WingI1)));
+% blue = cat(3, zeros(size(WingI1)), zeros(size(WingI1)), ones(size(WingI1)));
+% hold on ;
+% h = imshow(red); 
+% set(h, 'AlphaData', Ia);
+% j = imshow(green); 
+% set(j, 'AlphaData', Ja);
+% k = imshow(blue);
+% set(k, 'AlphaData', Ka);
+% hold off;
 %% Step Clear
 clear img1
 clear img2
 clear bw
 clear bw1
+i/length(WingIDS.Files)
+%% Coord Load
+
+CoordArray_cell = struct2cell(CoordArray);
+
+coord = CoordArray_cell{i,1};
+
+
+
+%% Path Length
+for c = 1:8
+figure, 
+imshow(bw7);hold on; title(name, 'Interpreter', 'none');
+% imshow(WingI1); hold on
+r1 = coord(c,2);
+c1 = coord(c,1);
+r2 = coord(c,4);
+c2 = coord(c,3);
+hold on
+plot(c1, r1, 'g*', 'MarkerSize', 15)
+plot(c2, r2, 'g*', 'MarkerSize', 15)
+hold off
+D1 = bwdistgeodesic(bw7, c1, r1, 'quasi-euclidean');
+D2 = bwdistgeodesic(bw7, c2, r2, 'quasi-euclidean');
+
+D = D1 + D2;
+D = round(D * 8) / 8;
+
+D(isnan(D)) = inf;
+skeleton_path = imregionalmin(D);
+P = imoverlay(bw7a, imdilate(skeleton_path, ones(3,3)), [1 0 0]);
+imshow(P, 'InitialMagnification', 200)
+hold on
+plot(c1, r1, 'g*', 'MarkerSize', 10)
+plot(c2, r2, 'g*', 'MarkerSize', 10)
+hold off
+
+path_length = D(skeleton_path);
+path_lengths(i,c) = path_length(1);
+end
+% close all;
 end
 
 %%
@@ -406,15 +451,15 @@ end
 % WingAreaStd(34,1) = std(WingConvexArea(AH));
 % WingAreaStd(35,1) = std(WingConvexArea(AI));
 % 
-WingAreaMean = table(WingAreaMean);
-WingAreaStd = table(WingAreaStd);
-WingTable = [WingTable WingAreaMean WingAreaStd];
-
-figure,
-for i = 1:length(WingIDS.Files)
-scatter(bw16{1,i}(:,1), bw16{1,i}(:,2), '.'); hold on;
-end
-set(gca, 'YDir', 'reverse')
+% WingAreaMean = table(WingAreaMean);
+% WingAreaStd = table(WingAreaStd);
+% WingTable = [WingTable WingAreaMean WingAreaStd];
+% 
+% figure,
+% for i = 1:length(WingIDS.Files)
+% scatter(bw16{1,i}(:,1), bw16{1,i}(:,2), '.'); hold on;
+% end
+% set(gca, 'YDir', 'reverse')
 
 
 % %% Procrustes
